@@ -1,0 +1,10 @@
+{
+  "name": "usdc-sdk-examples",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Tiny USDC helper and runnable examples. Used to dogfood Bon Travail.",
+  "scripts": {
+    "test": "node --test && node examples/transfer.mjs"
+  }
+}
