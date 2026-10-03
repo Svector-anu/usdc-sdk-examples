@@ -1,7 +1,7 @@
 # usdc-sdk-examples
 
 A tiny USDC helper (`src/usdc.js`) and a runnable example (`examples/transfer.mjs`).
-`npm test` runs the unit tests and the example.
+`npm test` runs the unit tests and the example. Requires Node 22.
 
 This repository is a safe, public sandbox used to dogfood [Bon Travail](https://github.com/Svector-anu):
 Aeon watches the **Examples** workflow, investigates repeated failures, and an engineer
