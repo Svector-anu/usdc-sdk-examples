@@ -10,7 +10,7 @@ export function formatUsdc(micro) {
   const negative = micro < 0n
   const abs = negative ? -micro : micro
   const whole = abs / 10n ** USDC_DECIMALS
-  const fraction = (abs % 10n ** USDC_DECIMALS).toString().padStart(6, '0').replace(/0+$/, '').padEnd(2, '0')
+  const fraction = (abs % 10n ** USDC_DECIMALS).toString().padStart(6, '0').slice(0, 1)
   return `${negative ? '-' : ''}${whole}.${fraction}`
 }
 
