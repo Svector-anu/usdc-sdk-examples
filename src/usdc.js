@@ -14,9 +14,12 @@ export function formatUsdc(micro) {
   return `${negative ? '-' : ''}${whole}.${fraction}`
 }
 
-/** "1.5" -> 1500000n. Accepts amounts pasted from wallets that show extra precision. */
+/**
+ * "1.5" -> 1500000n. USDC has six decimals, so more than six is refused rather
+ * than truncated: dropping digits would silently change the amount.
+ */
 export function parseUsdc(text) {
-  const match = /^(\d+)(?:\.(\d+))?$/.exec(text.trim())
-  if (!match) throw new Error(`not a USDC amount: ${text}`)
-  return BigInt(match[1]) * 10n ** USDC_DECIMALS + BigInt((match[2] ?? '').padEnd(6, '0').slice(0, 6))
+  const match = /^(\d+)(?:\.(\d{1,6}))?$/.exec(text.trim())
+  if (!match) throw new Error(`not a USDC amount (at most 6 decimals): ${text}`)
+  return BigInt(match[1]) * 10n ** USDC_DECIMALS + BigInt((match[2] ?? '').padEnd(6, '0'))
 }
