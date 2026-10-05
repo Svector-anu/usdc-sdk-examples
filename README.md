@@ -21,3 +21,5 @@ implementation meets it yet. Each is checked by its own job in the
 
 Rewards are paid in USDC on **Arc testnet**. Change only the file under `src/`;
 the tests and the workflow are the judge and cannot be edited by a fix.
+
+Each job prints exactly which cases fail, so a fix can be checked locally with `npm run test:split` or `npm run test:parse`.
