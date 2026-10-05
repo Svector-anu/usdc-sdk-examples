@@ -5,6 +5,8 @@
   "type": "module",
   "description": "Tiny USDC helper and runnable examples. Used to dogfood Bon Travail.",
   "scripts": {
-    "test": "node --test && node examples/transfer.mjs"
+    "test": "node --test test/usdc.test.js && node examples/transfer.mjs",
+    "test:split": "node --test test/split.test.js",
+    "test:parse": "node --test test/parse-loose.test.js"
   }
 }
