@@ -7,6 +7,7 @@
   "scripts": {
     "test": "node --test test/usdc.test.js && node examples/transfer.mjs",
     "test:split": "node --test test/split.test.js",
-    "test:parse": "node --test test/parse-loose.test.js"
+    "test:parse": "node --test test/parse-loose.test.js",
+    "test:bugs": "node --test 'test/bugs/*.test.js'"
   }
 }
